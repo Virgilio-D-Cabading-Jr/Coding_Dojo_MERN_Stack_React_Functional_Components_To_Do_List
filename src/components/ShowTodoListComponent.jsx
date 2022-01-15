@@ -8,6 +8,9 @@ import StrikedComponent from './StrikedComponent';
 const ShowTodoListComponent = (props) => {
     let randomItem = false;
 
+    const handleCheckChanged = (targetIdx, targetComplete) => {
+        return "";
+    }
 
     return (
         <div className="bg-white p-2 rounded">
@@ -24,12 +27,15 @@ const ShowTodoListComponent = (props) => {
                     {
                         props.todoList.map(
                             (todoItem, idx) => {
-                                return <tr>
+                                return <tr key={idx}>
                                         <th scope="row">{ idx+1 }</th>
                                         <td><StrikedComponent todoItem={ todoItem }/></td>
                                         <td>
+                                            {/* Check Box that changes is a Task if Complete or not */}
                                             <input type="checkbox"
-                                                value={randomItem}
+                                                checked={ todoItem.complete }
+                                                value={ todoItem.complete }
+                                                onChange={ e => props.handleCompleteChecked(idx, e.target.checked) }
                                             />
                                         </td>
                                         <td>

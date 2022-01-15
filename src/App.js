@@ -18,13 +18,22 @@ const App = () => {
     },
     {
       task: "Chores",
-      complete: false
+      complete: true
     },
     {
       task: "Go to the Park",
       complete: false
     }
   ])
+
+  const handleCompleteChecked = (targetIdx, targetComplete) => {
+    const newTodoList = [...todoList];
+    console.log("**** In handle Complete Checked *****");
+    console.log("target idx:", targetIdx, "|| target complete:", targetComplete);
+    newTodoList[targetIdx].complete = targetComplete;
+    setTodoList(newTodoList);
+  }
+
   // //// OUTPUT ///////////////////////////////////////////////////
   return (
     <div className="App">
@@ -32,7 +41,7 @@ const App = () => {
       {/* **** INPUT and ADD TO DO LIST COMPONENT **************  */}
       <AddTodoListComponent />
       {/* **** SHOW TO DO LIST COMPONENT ************************ */}
-      <ShowTodoListComponent todoList={ todoList } />
+      <ShowTodoListComponent todoList={ todoList } handleCompleteChecked={ handleCompleteChecked } />
     </div >
   );
 }
