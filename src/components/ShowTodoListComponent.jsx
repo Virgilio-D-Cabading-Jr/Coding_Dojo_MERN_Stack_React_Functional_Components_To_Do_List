@@ -6,16 +6,15 @@ import StrikedComponent from './StrikedComponent';
 ///////////////////////////////////////////////////////////////
 
 const ShowTodoListComponent = (props) => {
+    // //// FIELDS ////////////////////////////////////////////
     let randomItem = false;
 
-    const handleCheckChanged = (targetIdx, targetComplete) => {
-        return "";
-    }
-
+    // //// OUTPUT ////////////////////////////////////////////
     return (
         <div className="bg-white p-2 rounded">
             <h2>To Do List:</h2>
             <p>{JSON.stringify(props.todoList)}</p>
+            {/* //// TABLE OF TO LIST OUT THE TO DO LIST ///////////// */}
             <table className='table'>
                 <thead className="thead-dark">
                     <tr>
@@ -25,19 +24,22 @@ const ShowTodoListComponent = (props) => {
                         <th scope="col">Action</th>
                     </tr>
                     {
+                        // **** Iterate through each item on the TodoList ********
                         props.todoList.map(
                             (todoItem, idx) => {
+                                // **** Each Item on the To Do List is a Row on the Table ********
                                 return <tr key={idx}>
                                         <th scope="row">{ idx+1 }</th>
                                         <td><StrikedComponent todoItem={ todoItem }/></td>
+                                        {/* Check Box that changes is a Task if Complete or not */}
                                         <td>
-                                            {/* Check Box that changes is a Task if Complete or not */}
                                             <input type="checkbox"
                                                 checked={ todoItem.complete }
                                                 value={ todoItem.complete }
                                                 onChange={ e => props.handleCompleteChecked(idx, e.target.checked) }
                                             />
                                         </td>
+                                        {/* **** Delete Button to Delete Task ******** */}
                                         <td>
                                             <button className="btn btn-sm btn-danger rounded">
                                                 <strong>Delete</strong>
