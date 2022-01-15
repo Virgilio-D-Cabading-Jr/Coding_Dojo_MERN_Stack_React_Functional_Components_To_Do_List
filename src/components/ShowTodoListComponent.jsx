@@ -5,13 +5,14 @@ import StrikedComponent from './StrikedComponent';
 //  SHOW TO DO LIST COMPONENT
 ///////////////////////////////////////////////////////////////
 
-const ShowTodoListComponent = () => {
+const ShowTodoListComponent = (props) => {
     let randomItem = false;
 
 
     return (
         <div className="bg-white p-2 rounded">
             <h2>To Do List:</h2>
+            <p>{JSON.stringify(props.todoList)}</p>
             <table className='table'>
                 <thead className="thead-dark">
                     <tr>
@@ -20,20 +21,26 @@ const ShowTodoListComponent = () => {
                         <th scope="col">Complete</th>
                         <th scope="col">Action</th>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><StrikedComponent /></td>
-                        <td>
-                            <input  type="checkbox" 
-                                    value={randomItem}
-                                    />
-                        </td>
-                        <td>
-                            <button className="btn btn-sm btn-danger rounded">
-                                <strong>Delete</strong>
-                            </button>
-                        </td>
-                    </tr>
+                    {
+                        props.todoList.map(
+                            (todoItem, idx) => {
+                                return <tr>
+                                        <th scope="row">{ idx+1 }</th>
+                                        <td><StrikedComponent todoItem={ todoItem }/></td>
+                                        <td>
+                                            <input type="checkbox"
+                                                value={randomItem}
+                                            />
+                                        </td>
+                                        <td>
+                                            <button className="btn btn-sm btn-danger rounded">
+                                                <strong>Delete</strong>
+                                            </button>
+                                        </td>
+                                    </tr>
+                            }
+                        )
+                    }
                 </thead>
             </table>
         </div>
