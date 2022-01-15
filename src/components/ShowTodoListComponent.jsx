@@ -41,7 +41,8 @@ const ShowTodoListComponent = (props) => {
                                         </td>
                                         {/* **** Delete Button to Delete Task ******** */}
                                         <td>
-                                            <button className="btn btn-sm btn-danger rounded">
+                                            <button className="btn btn-sm btn-danger rounded"
+                                                onClick={ (e) => props.deleteTask( idx ) } >
                                                 <strong>Delete</strong>
                                             </button>
                                         </td>

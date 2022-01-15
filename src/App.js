@@ -59,14 +59,14 @@ const App = () => {
 
   // //// DELETE ///////////////////////////////////////////////////
 
-  const deleteTask = (targetIdx) {
-    const filtereTodoList = todoList.filter ( (taskItem), idx => idx !== targetIdx );
+  const deleteTask = (targetIdx) => {
+    const filteredTodoList = todoList.filter ( (taskItem, idx) => idx !== targetIdx );
 
     console.log("*****************************************");
     console.log("IN DELETE TASK");
     console.log("Target Index:", targetIdx);
     console.log("Filtered todoList:", JSON.stringify(filteredTodoList));
-    // setTodoList(filtereTodoList);
+    setTodoList(filteredTodoList);
   }
 
   // //// OUTPUT ///////////////////////////////////////////////////
