@@ -10,8 +10,10 @@ function App() {
   return (
     <div className="App">
       <h1>App.js Content</h1>
-      {/* **** INPUT AMD ADD TO DO LIST COMPONENT **************  */}
+      {/* **** INPUT and ADD TO DO LIST COMPONENT **************  */}
       <AddTodoListComponent />
+      {/* **** SHOW TO DO LIST COMPONENT ************************ */}
+      <ShowTodoListComponent />
     </div>
   );
 }
