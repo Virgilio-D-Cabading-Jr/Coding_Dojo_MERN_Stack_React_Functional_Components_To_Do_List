@@ -5,6 +5,8 @@ import React from 'react'
 ///////////////////////////////////////////////////////////////
 
 const ShowTodoListComponent = () => {
+    let randomItem = false;
+
     return (
         <div className="bg-white p-2 rounded">
             <h2>To Do List:</h2>
@@ -20,7 +22,9 @@ const ShowTodoListComponent = () => {
                         <th scope="row">1</th>
                         <td>Item to be done</td>
                         <td>
-                            CheckBox
+                            <input  type="checkbox" 
+                                    value={randomItem}
+                                    />
                         </td>
                         <td>
                             <button className="btn btn-sm btn-danger rounded">
