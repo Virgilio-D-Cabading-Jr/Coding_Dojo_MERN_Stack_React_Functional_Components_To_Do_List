@@ -19,8 +19,14 @@ const ShowTodoListComponent = () => {
                     <tr>
                         <th scope="row">1</th>
                         <td>Item to be done</td>
-                        <td>CheckBox</td>
-                        <td>Delete Button</td>
+                        <td>
+                            CheckBox
+                        </td>
+                        <td>
+                            <button className="btn btn-sm btn-danger rounded">
+                                <strong>Delete</strong>
+                            </button>
+                        </td>
                     </tr>
                 </thead>
             </table>
