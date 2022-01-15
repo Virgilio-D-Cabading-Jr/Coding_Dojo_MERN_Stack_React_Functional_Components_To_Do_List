@@ -4,6 +4,10 @@ import React from 'react'
 //  ADD TO DO LIST COMPONENT
 ///////////////////////////////////////////////////////////////
 
+/**
+ * Add Todo List Component
+ * @returns A form where an item can be inputed/add to the Todo List
+ */
 const AddTodoListComponent= () => {
     return (
         <div className="bg-info mb-3 p-2 rounded">
