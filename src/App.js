@@ -26,6 +26,23 @@ const App = () => {
     }
   ])
 
+  // //// CREATE ///////////////////////////////////////////////////
+
+  const addTask = (newTask) => {
+    let newTodoList = [...todoList];
+    newTodoList.push({
+        task: newTask,
+        complete: false
+      }
+    );
+    console.log("**********************");
+    console.log("IN ADD TASK");
+    console.log(JSON.stringify(newTodoList));
+    setTodoList(newTodoList);
+  }
+
+  // //// UPDATE ///////////////////////////////////////////////////
+
   const handleCompleteChecked = (targetIdx, targetComplete) => {
     const newTodoList = [...todoList];
     console.log("**** In handle Complete Checked *****");
@@ -34,12 +51,14 @@ const App = () => {
     setTodoList(newTodoList);
   }
 
+
+
   // //// OUTPUT ///////////////////////////////////////////////////
   return (
     <div className="App">
       <h1>App.js Content</h1>
       {/* **** INPUT and ADD TO DO LIST COMPONENT **************  */}
-      <AddTodoListComponent />
+      <AddTodoListComponent addTask={ addTask } />
       {/* **** SHOW TO DO LIST COMPONENT ************************ */}
       <ShowTodoListComponent todoList={ todoList } handleCompleteChecked={ handleCompleteChecked } />
     </div >

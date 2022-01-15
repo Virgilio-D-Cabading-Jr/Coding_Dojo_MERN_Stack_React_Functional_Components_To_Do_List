@@ -9,6 +9,10 @@ const ShowTodoListComponent = (props) => {
     // //// FIELDS ////////////////////////////////////////////
     let randomItem = false;
 
+    console.log("**********************");
+    console.log("IN SHOW TO DO LIST");
+    console.log(JSON.stringify(props.todoList));
+
     // //// OUTPUT ////////////////////////////////////////////
     return (
         <div className="bg-white p-2 rounded">
