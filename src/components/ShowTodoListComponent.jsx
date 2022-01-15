@@ -11,15 +11,14 @@ const ShowTodoListComponent = (props) => {
 
     // //// OUTPUT ////////////////////////////////////////////
     return (
-        <div className="bg-white p-2 rounded">
+        <div className="bg-white p-2 border border-info rounded">
             <h2>To Do List:</h2>
-            <p>{JSON.stringify(props.todoList)}</p>
             {/* //// TABLE OF TO LIST OUT THE TO DO LIST ///////////// */}
             <table className='table'>
                 <thead className="thead-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col-3">Task</th>
+                        <th scope="col-4">Task</th>
                         <th scope="col">Complete</th>
                         <th scope="col">Action</th>
                     </tr>

@@ -26,11 +26,12 @@ const AddTodoListComponent= (props) => {
     // //// OUTPUT ////////////////////////////////////////////
     return (
         <div className="bg-info mb-3 p-2 rounded">
+            <h3>Add a Task to the To Do List:</h3>
             <form className="row p-3" onSubmit={ e => handleSubmit(e) }>
-                <input  className="col-7 rounded-left border-0" type="text"
+                <input  className="col-md-9 rounded-left border-0" type="text"
                         onChange={ e => setInputText(e.target.value) } 
                         value={ inputText } />
-                <button className='col-3 bg-primary rounded-right btn'>Add Item</button>
+                <button className='col-md-3 bg-primary rounded-right btn'>Add Item</button>
             </form>
         </div>
     )

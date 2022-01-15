@@ -59,20 +59,19 @@ const App = () => {
 
   // //// DELETE ///////////////////////////////////////////////////
 
+  /**
+   * Delete Task
+   * Given a task specified by a target index, delete the task from the todoList
+   * @param {number} targetIdx 
+   */
   const deleteTask = (targetIdx) => {
     const filteredTodoList = todoList.filter ( (taskItem, idx) => idx !== targetIdx );
-
-    console.log("*****************************************");
-    console.log("IN DELETE TASK");
-    console.log("Target Index:", targetIdx);
-    console.log("Filtered todoList:", JSON.stringify(filteredTodoList));
     setTodoList(filteredTodoList);
   }
 
   // //// OUTPUT ///////////////////////////////////////////////////
   return (
     <div className="App">
-      <h1>App.js Content</h1>
       {/* **** INPUT and ADD TO DO LIST COMPONENT **************  */}
       <AddTodoListComponent addTask={ addTask } />
       {/* **** SHOW TO DO LIST COMPONENT ************************ */}
