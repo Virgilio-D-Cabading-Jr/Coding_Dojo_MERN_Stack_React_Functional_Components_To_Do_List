@@ -12,28 +12,26 @@ import { useState } from 'react';
 const AddTodoListComponent= (props) => {
     const [inputText, setInputText] = useState("");
 
-    const handleInputChange = (e) => {
-        console.log("**** In handle Input Change ******");
-        console.log(e.target.value);
-        setInputText(e.target.value);
-    }
-
+    /**
+     * Handle Form Submit
+     * Passes a new task to the todoList them resets inputText to empty
+     * @param { event object } e 
+     */
     const handleSubmit = (e) => {
         e.preventDefault();
         props.addTask(inputText);
         setInputText("");
     }
 
+    // //// OUTPUT ////////////////////////////////////////////
     return (
         <div className="bg-info mb-3 p-2 rounded">
-            <h2>Add an Item on the To Do List:</h2>
             <form className="row p-3" onSubmit={ e => handleSubmit(e) }>
                 <input  className="col-7 rounded-left border-0" type="text"
-                        onChange={ handleInputChange } 
+                        onChange={ e => setInputText(e.target.value) } 
                         value={ inputText } />
                 <button className='col-3 bg-primary rounded-right btn'>Add Item</button>
             </form>
-            <p>{inputText}</p>
         </div>
     )
 }

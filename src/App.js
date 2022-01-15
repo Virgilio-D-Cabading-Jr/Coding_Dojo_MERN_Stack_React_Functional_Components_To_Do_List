@@ -28,6 +28,11 @@ const App = () => {
 
   // //// CREATE ///////////////////////////////////////////////////
 
+  /**
+   * Add Task
+   * Adds an new Task Objedt to the todoList
+   * @param {String} newTask 
+   */
   const addTask = (newTask) => {
     let newTodoList = [...todoList];
     newTodoList.push({
@@ -35,23 +40,34 @@ const App = () => {
         complete: false
       }
     );
-    console.log("**********************");
-    console.log("IN ADD TASK");
-    console.log(JSON.stringify(newTodoList));
     setTodoList(newTodoList);
   }
 
   // //// UPDATE ///////////////////////////////////////////////////
 
+  /**
+   * Handle Complete Check Box Changed
+   * Updates the targeted Task's Complete key in the todoList
+   * @param {int} targetIdx 
+   * @param {boolean} targetComplete 
+   */
   const handleCompleteChecked = (targetIdx, targetComplete) => {
     const newTodoList = [...todoList];
-    console.log("**** In handle Complete Checked *****");
-    console.log("target idx:", targetIdx, "|| target complete:", targetComplete);
     newTodoList[targetIdx].complete = targetComplete;
     setTodoList(newTodoList);
   }
 
+  // //// DELETE ///////////////////////////////////////////////////
 
+  const deleteTask = (targetIdx) {
+    const filtereTodoList = todoList.filter ( (taskItem), idx => idx !== targetIdx );
+
+    console.log("*****************************************");
+    console.log("IN DELETE TASK");
+    console.log("Target Index:", targetIdx);
+    console.log("Filtered todoList:", JSON.stringify(filteredTodoList));
+    // setTodoList(filtereTodoList);
+  }
 
   // //// OUTPUT ///////////////////////////////////////////////////
   return (
@@ -60,7 +76,9 @@ const App = () => {
       {/* **** INPUT and ADD TO DO LIST COMPONENT **************  */}
       <AddTodoListComponent addTask={ addTask } />
       {/* **** SHOW TO DO LIST COMPONENT ************************ */}
-      <ShowTodoListComponent todoList={ todoList } handleCompleteChecked={ handleCompleteChecked } />
+      <ShowTodoListComponent  todoList={ todoList } 
+                              handleCompleteChecked={ handleCompleteChecked }
+                              deleteTask={ deleteTask } />
     </div >
   );
 }
