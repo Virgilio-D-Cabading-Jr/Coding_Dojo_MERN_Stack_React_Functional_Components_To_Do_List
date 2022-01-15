@@ -7,9 +7,9 @@ import React from 'react'
 function StrikedComponent() {
     return (
         <s>
-            Text inside Striked Component          
+            Text inside Striked Component
         </s>
     )
 }
 
-export default StrikedCompos
+export default StrikedComponent

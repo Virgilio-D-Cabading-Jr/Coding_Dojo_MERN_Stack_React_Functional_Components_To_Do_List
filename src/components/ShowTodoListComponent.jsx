@@ -1,4 +1,5 @@
 import React from 'react'
+import StrikedComponent from './StrikedComponent';
 
 ///////////////////////////////////////////////////////////////
 //  SHOW TO DO LIST COMPONENT
@@ -21,7 +22,7 @@ const ShowTodoListComponent = () => {
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Item to be done</td>
+                        <td><StrikedComponent /></td>
                         <td>
                             <input  type="checkbox" 
                                     value={randomItem}
