@@ -34,14 +34,13 @@ const ShowTodoListComponent = (props) => {
                                         <td>
                                             <input type="checkbox"
                                                 checked={ todoItem.complete }
-                                                value={ todoItem.complete }
                                                 onChange={ e => props.handleCompleteChecked(idx, e.target.checked) }
                                             />
                                         </td>
                                         {/* **** Delete Button to Delete Task ******** */}
                                         <td>
                                             <button className="btn btn-sm btn-danger rounded"
-                                                onClick={ (e) => props.deleteTask( idx ) } >
+                                                onClick={ () => props.deleteTask( idx ) } >
                                                 <strong>Delete</strong>
                                             </button>
                                         </td>
